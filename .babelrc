@@ -1,0 +1,30 @@
+{
+  "presets": [
+    [
+      "@babel/preset-env",
+      {
+        // 禁止babel-loader做依赖解析 否则有可能会导致tree-shaking 失败
+        // https://stackoverflow.com/questions/55792519/what-does-the-modulesauto-means-in-babel-preset-env-field
+        "modules": false,
+        // 目标浏览器环境限制 做好兼容
+        "targets": {
+          "browsers": ["> 1%", "last 2 versions", "not ie <= 8"]
+        }
+      }
+    ],
+    "@babel/preset-typescript"
+  ],
+  "plugins": [
+    [
+      "@babel/plugin-transform-runtime",
+      {
+        "regenerator": true
+      }
+    ]
+  ],
+  "env": {
+    "test": {
+      "plugins": ["istanbul"]
+    }
+  }
+}
