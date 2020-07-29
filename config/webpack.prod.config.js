@@ -1,7 +1,6 @@
 const merge = require('webpack-merge');
 const base = require('./webpack.base.config.js');
 const { outputPath } = require('./index.js');
-var nodeExternals = require('webpack-node-externals');
 
 module.exports = merge(base, {
   devtool: false,
@@ -14,5 +13,5 @@ module.exports = merge(base, {
     hot: true,
     inline: true,
   },
-  externals: [nodeExternals()],
+  externals: [/^@babyfs/],
 });
