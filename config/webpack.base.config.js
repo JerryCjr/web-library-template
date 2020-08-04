@@ -6,7 +6,7 @@ module.exports = {
   output: {
     filename: 'index.js',
     path: outputPath(),
-    library: 'webLibrary', // library name
+    library: '{{library}}', // library name
     libraryTarget: 'umd', // cmd amd var
   },
   module: {
