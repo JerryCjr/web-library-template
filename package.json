@@ -14,7 +14,8 @@
     "build:dev": "webpack --mode development --config config/webpack.dev.config.js",
     "build": "webpack --mode production --config config/webpack.prod.config.js",
     "lint": "eslint './{src,test/unit}/**/*.{js,ts}' --quiet --fix",
-    "test": "cross-env NODE_ENV=test karma start test/karma.conf.js"
+    "test": "cross-env NODE_ENV=test karma start test/karma.conf.js",
+    "prepublishOnly": "webpack --mode production --config config/webpack.prod.config.js"
   },
   "gitHooks": {
     "pre-commit": "lint-staged"
