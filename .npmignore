@@ -3,4 +3,6 @@ config
 public
 test
 
+package-lock.json
+npm-shrinkwrap.json
 
